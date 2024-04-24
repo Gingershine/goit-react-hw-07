@@ -3,7 +3,7 @@ import { FaPhone } from "react-icons/fa6";
 import { BsFillPersonFill } from "react-icons/bs";
 import css from './Contact.module.css'
 import { useDispatch } from 'react-redux'
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 const Contact = ({contact}) => {
 
@@ -17,13 +17,12 @@ const handleDelete = () => {
           <div className={css.wraper}>
                 <div className={css.line}>
                   {<BsFillPersonFill/>}{contact.name}
-                </div>
-        
+                </div>        
                 <div className={css.line}>
                   {<FaPhone/>} {contact.number}
                 </div>
           </div>
-                <button className={css.btn} onClick={handleDelete}>Delete</button>
+            <button className={css.btn} onClick={handleDelete}>Delete</button>
       </div>
   )
 }
